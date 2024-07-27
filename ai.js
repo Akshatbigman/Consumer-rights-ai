@@ -12,7 +12,7 @@ document.getElementById('start-btn').addEventListener('click', async () => {
   recognition.onspeechend = () => {
       setTimeout(() => {
           recognition.stop();
-      }, 4000); // stops recognition after 4 seconds of silence
+      }, 4000);
   };
 
   recognition.onresult = async (event) => {
@@ -43,7 +43,7 @@ async function getResponseFromAPI(userQuery) {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer CK1WID8YMT6CI0RQ60SCS2EXXEBZW3C98JAZDKTCY00KJL79WC92UH3DVV6R7DX5'
+          'Authorization': 'Bearer your api key'
       },
       body: JSON.stringify({
           model: 'gpt-3.5-turbo',
